@@ -1,0 +1,8 @@
+contig	source	feature	start	end	frame	gene_name	gene_id
+2	jgi	CDS	3213	3464	0	NA	scaffold_200002.1
+2	jgi	exon	3213	3488	.	NA	scaffold_200002.1
+2	jgi	exon	5262	5496	.	CP5	scaffold_200003.1
+2	jgi	gene	5262	6915	.	CP5	scaffold_200003.1
+2	jgi	CDS	5282	5496	0	CP5	scaffold_200003.1
+2	jgi	CDS	5579	5750	1	CP5	scaffold_200003.1
+2	jgi	exon	5579	5750	.	CP5	scaffold_200003.1

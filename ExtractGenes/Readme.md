@@ -1,4 +1,4 @@
-#ExtractGenes
+# ExtractGenes
 A python parser for extracting specific genes from a transcript file.
 
 ## Usage:

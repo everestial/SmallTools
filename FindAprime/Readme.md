@@ -438,6 +438,47 @@ This shows that for a "primality test" we can set the `max factor` directly at t
 Hence the `O(sqrt(N))` test.
 
 <br>
+**SourceCode for `O(sqrt(N))` implementation:**
+```python
+def test_primeSqrt(num):
+    set_timer = time.time()
+    print()
+    print("Primality test using O(sqrt(N)) implementation.")
+    max_factor = round(math.sqrt(num))
+    is_prime = ''  # to store the boolean logic
+
+    #print('max factor', max_factor)
+
+    # instead of using for-loop on a range of numbers ..
+    # in while loop we run the loop until a condition is met ..
+    # i.e here we start dividing by factor 2 and then increase the factor ..
+    # .. by 1 until it becomes equal to "max_factor"
+    factor = 2
+    while factor <= max_factor:
+        if num % factor == 0:
+            # if a number gets divided into two positive natural numbers
+            print('the input number %s is not a prime' % num)
+            print('Completed primality test in %s.' %(time.time() - set_timer))
+
+            # update the boolean logic
+            is_prime = False
+
+            # break the while loop if condition met
+            break
+
+        # update the factor size if above condition isn't met
+        factor += 1
+
+    if is_prime == '':
+        print('the input number %s is a prime' % num)
+        print('Completed primality test in %s.' % (time.time() - set_timer))
+
+## Call the function to test the primality
+test_primeSqrt(my_num)
+```
+
+
+<br>
 **Lets begin some test with Sqrt(N) implementation.**
 <pre>
 $ python3 FindMeAprime.py 

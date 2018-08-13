@@ -62,8 +62,8 @@ test_prime(my_num)
 
 ## Level 02: Now, let's take algorithm to a next level
 '''When we test if a number is prime we don't have to divide the number by numbers 
-2 to n-1. We can simply divide the number by numbers from 2 to (n-1/2).
-    - because if the number isn't divided by 2 it cannot be divided by any integer bigger than (n-1)/2. 
+2 to n-1. We can simply divide the number by numbers from 2 to (n+1/2).
+    - because if the number isn't divided by 2 it cannot be divided by any integer bigger than (n+1)/2. 
 
 We will also add a method to track the time required to test the prime.
 '''
@@ -75,7 +75,7 @@ def test_primeL2(num):
     set_timer = time.time()
     print()
     print("Level 02 primality test.")
-    max_factor = round((num-1)/2)
+    max_factor = round((num+1)/2)
     is_prime = ''  # to store the boolean logic
 
     # here (in python) the upper limit of the range is n-1
@@ -113,7 +113,7 @@ def test_prime_W1(num):
     set_timer = time.time()
     print()
     print("Primality test using while loop.")
-    max_factor = round((num-1)/2)
+    max_factor = round((num+1)/2)
     is_prime = ''  # to store the boolean logic
 
     # instead of using for-loop on a range of numbers ..
@@ -167,7 +167,7 @@ def test_prime_dmf(num):
     print("Primality test using dynamic max factor on while loop.")
 
     # we start with this max factor
-    max_factor = round((num-1)/2)
+    max_factor = round((num+1)/2)
 
     is_prime = ''  # to store the boolean logic
 
@@ -188,7 +188,7 @@ def test_prime_dmf(num):
         factor += 1
 
         # also reduce the size of the "max factor" if above condition isn't met
-        max_factor = round((num-1)/factor)
+        max_factor = round((num+1)/factor)
 
         #print('factor, max factor:', factor, max_factor)
 

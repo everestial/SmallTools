@@ -153,7 +153,6 @@ def main():
         # write the header for the file that is output as a single file
         fileout.write('\t'.join(dask_cols) + '\n')
 
-        # write it as a single file
         pd_df_merged.to_csv(fileout, mode='a', sep='\t', index=False, header=False)
 
 
@@ -168,9 +167,18 @@ def main():
 def extract_haplotype(list_names, pd_df_list, list_type):
     for names in list_names:
         names = names.rstrip('\n')
+        print('names :', names)
+        print()
 
-        # Reading dataframe using dask (if file it too large)
-        df_by_pd = pd.read_csv(names, sep='\t', dtype={"CHROM": object, "POS": int})
+
+        ## Reading dataframe  (use dask if the file is too large)
+        # make sure the "CHROM" and "POS" fields are read as integer 
+        #df_by_pd = pd.read_csv(names, sep='\t', dtype={"CHROM": object, "POS": int})
+        df_by_pd = pd.read_csv(names, sep='\t')
+        #df_by_pd['CHROM'] = df_by_pd['CHROM'].apply(lambda row: int(row))
+        df_by_pd['CHROM'] = df_by_pd['CHROM'].apply(pd.to_numeric, errors='coerce')
+        df_by_pd['POS'] = df_by_pd['POS'].apply(pd.to_numeric, errors='coerce')
+
 
         for cols in list(df_by_pd.columns):
             if ":" in cols:
@@ -261,7 +269,3 @@ def numericalSort(value):
 
 if __name__ == '__main__':
     main()
-
-
-
-

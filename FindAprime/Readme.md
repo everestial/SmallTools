@@ -12,7 +12,7 @@ For a newbie the concept of algorithm and it's translation to working code (in a
 <br>
 
 # Tutorial on "Primality Test"
-Today, I will talk about a simple mathematical problem - "Test of Primality" i.e if a given natural positive number is a prime or not.
+Today, I will talk about a simple mathematical problem - "Test of Primality" i.e if a given natural positive number is a prime or not. Additionally, this test will also provide a "proof of principle" for the test method that utilizes (O(sqrt(N)).
 
 Finding a prime has been one of the challenging mathematical rigor to humans since the time the numbers were invented. And the test of primality has always fascinated us.
 
